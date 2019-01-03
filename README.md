@@ -3,7 +3,9 @@
 simple fully automatized solution for receiving large quantities of client side encrypted data using aws:s3
 
 # key fetaures
-
+* client side encrypted (e2e)
+* up to 5 TB per bucket
+* simple & fast
 
 # Setup & Installation
 ## dependencies
@@ -12,11 +14,11 @@ simple fully automatized solution for receiving large quantities of client side 
 * bash
 
 ## install `awscli`
-`% sudo pip install awsclie
+`% sudo pip install awscli`
 
 ## install `terraform`
 ### Ubuntu
-`https://askubuntu.com/a/983352 `
+`# https://askubuntu.com/a/983352 `
 
 ### arch
 `% sudo pacman -S terraform`
