@@ -1,23 +1,23 @@
 
 # Simple Drop
-Simple, fully automatized solution for receiving large quantities of third party data with the possibiollity of client side encryption. Making use of aws:s3.
+Simple, fully automatized solution for receiving large quantities of third-party data with the possibility of client-side encryption. Making use of aws:s3.
 
 # Key fetaures
-* Client side encryption (e2e)
-* Up to 5 TB per bucket
-* Really simple & fast
+* client-side encryption (e2e)
+* up to 5 TB per bucket
+* really simple & fast
 
 # Setup & Installation
-## dependencies
+## Dependencies
 * working aws account
 * awscli
 * terraform
 * bash
 
-## install `awscli`
+## Install awscli
 `% sudo pip install awscli`
 
-## install `terraform`
+## Install terraform
 ### Ubuntu
 `# https://askubuntu.com/a/983352 `
 
@@ -29,7 +29,7 @@ Simple, fully automatized solution for receiving large quantities of third party
 
 ## Configure
 ### awscli
-Add the following to you `.aws/credential`
+add the following to your `.aws/credential`
 ```
 [sd]
 aws_access_key_id = KEYKEYKEYKEY
@@ -42,7 +42,7 @@ cd aws
 terraform init
 ```
 
-### usage
+### Usage
 ```
 % ./sdrop help 
 ./sdrop new|list|remove|version|help
