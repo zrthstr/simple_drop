@@ -36,8 +36,7 @@ aws_s3_bucket
 ### macOS
 `% brew install terraform`
 
-## Configure
-### awscli
+## Configure awscli
 add the following to your `~/.aws/credentials`
 ```
 [sd]
@@ -53,7 +52,7 @@ terraform init
 ```
 
 # Usage
-### Version
+## Version
 ```
 % ./sdrop version
 
@@ -65,7 +64,7 @@ terraform init
     `'          the terms of the GNU General Public License.
 ```
 
-### Help
+## Help
 ```
 % ./sdrop help 
 ./sdrop new|list|remove|version|help
@@ -86,8 +85,8 @@ Creating new bucket: simple-drop-xxxxxxxxxxxxxxxx.s3.amazonaws.com
 ```
 % ./sdrop list 
 Listing buckets
-BUCKET yyyyyyyyyyy yyyyyyyyyyyyyyyyyyyyyyyyy
-OWNER	nnnnn.mmmmm	xxxxxxxxxxxxxxxxxxxxxxxxx
+BUCKET   yyyyy.yyyyy yyyyyyyyyyyyyyyyyyyyyyyyy
+OWNER	 nnnnn.mmmmm	xxxxxxxxxxxxxxxxxxxxxxxxx
 ...
 ```
 ## Remove Drop
@@ -99,11 +98,11 @@ Removing aws_iam_access_key, aws_iam_user, aws_iam_user_policy, aws_s3_bucket
 # confirm: yes
 ```
 
-### Todo:
-* add `./sdrop log --tail` funtion
+## Todo:
+* add `./sdrop log --tail` function
 * add `./drop new --region=region` feature
 
-### Mybe Todo:
+## Maybe Todo:
 * Enable S3 versioning
 * Enable S3 Logging
 * Enable S3 replication
