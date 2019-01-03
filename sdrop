@@ -1,0 +1,153 @@
+#!/bin/bash
+
+BUCKET_BASENAME="simple-drop"
+AWS_PREFIX=".s3.amazonaws.com"
+VERSION="v0.0.1"
+AUTHOR="zrth1k@gmail.com"
+
+function version
+{
+    echo 
+    echo "    ,"
+    echo "    )\\          SD - SimpleDrop - ${VERSION}"
+    echo "   /  \\         Copyright (C) 2019 ${AUTHOR}"
+    echo "  '   D'"
+    echo "  ',  ,'        This program may be freely redistributed under"
+    echo "    \`'          the terms of the GNU General Public License." 
+    echo 
+    exit
+}
+
+function help
+{
+    echo "./sdrop [new|list|remove|version|help]"
+    echo 
+    echo " new                      # creates new bucket"
+    echo " list                     # lists all buckets"
+    echo " remove <bucket-id>       # removes bucket "
+    echo " version                  # print version info"
+    echo " help                     # prints this message"
+
+    exit
+}
+
+function list
+{
+    echo "Listing buckets"
+     aws s3api list-buckets --output=text --profile=sd
+    exit
+}
+
+function new
+{
+    USER="$RANDOM$RANDOM"
+    RAND="$RANDOM$RANDOM$RANDOM"
+    NAME="$BUCKET_BASENAME-$RAND"
+    BUCKET_URL="$NAME$AWS_PREFIX"
+
+    echo Creating new bucket: $BUCKET_URL
+    cd aws
+    cat << EOF >> s3-$RAND.tf
+resource "aws_s3_bucket" "${NAME}" {
+  bucket = "${NAME}"
+  acl    = "private"
+
+  tags = {
+    Created_by = "simple-drop"
+  }
+}
+
+resource "aws_iam_user" "${USER}" {
+  name          = "${USER}"
+  path          = "/"
+  force_destroy = true
+}
+
+resource "aws_iam_user_policy" "${NAME}" {
+  name = "test"
+  user = "\${aws_iam_user.${USER}.name}"
+
+  policy = <<POLICY
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::${NAME}/*",
+                "arn:aws:s3:::${NAME}"
+            ]
+        }
+    ]
+}
+POLICY
+}
+
+resource "aws_iam_access_key" "${USER}" {
+  user = "\${aws_iam_user.${USER}.name}"
+}
+EOF
+
+    terraform fmt > /dev/null
+    terraform plan
+    terraform apply 
+    echo ""
+    echo "----------------Message to the Dropper-----------------"
+    echo "Dear Source, your Simple Drop is ready for your Data."
+    echo
+    echo "How-to:"
+    echo "       * Insall Cyberduck: https://cyberduck.io/download"
+    echo "       * Connection > s3 >"
+    echo "       * Enter: Username|Password|URL"
+    echo "       * Upload Data"
+    echo 
+    echo "Please consider making use of Client-side encryption:"
+    echo "        https://blog.cyberduck.io/2017/01/19/cryptomator/"
+    echo 
+    echo "Your Credentials:"
+    aws iam create-access-key --profile=sd --user-name ${USER} --output=json | grep -e SecretAccessKey -e AccessKeyId
+    echo "        \"URL\":  \"${BUCKET_URL}\""
+    echo
+    echo "------------------------end----------------------------"
+    exit
+}
+
+function remove
+{
+    BUCKET="s3-$1.tf"
+    echo Removing Bucket: $BUCKET
+    cd aws
+    rm -i $BUCKET
+    terraform apply
+    exit
+}
+
+
+if [ $# -eq 0 ]; then
+    echo "No arguments supplied"
+    help
+elif [ $1 = "help" ]; then
+    help
+elif [ $1 = "version" ]; then
+    version
+elif [ $1 = "new" ]; then
+    new
+elif [ $1 = "list" ]; then
+    list
+elif [ $1 = "remove" ]; then
+    if [ $# -eq 2 ]; then
+        remove $2
+    else
+        echo "Bad Argmuents - Not sure what bucket to remove"
+        help
+    fi
+else
+    echo "Unrecognized command line options"
+    help
+fi
+
