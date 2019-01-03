@@ -85,7 +85,7 @@ Creating new bucket: simple-drop-xxxxxxxxxxxxxxxx.s3.amazonaws.com
 ```
 % ./sdrop list 
 Listing buckets
-BUCKET   yyyyy.yyyyy yyyyyyyyyyyyyyyyyyyyyyyyy
+BUCKET   yyyyy.yyyyy    yyyyyyyyyyyyyyyyyyyyyyyyy
 OWNER	 nnnnn.mmmmm	xxxxxxxxxxxxxxxxxxxxxxxxx
 ...
 ```
@@ -104,12 +104,12 @@ Removing aws_iam_access_key, aws_iam_user, aws_iam_user_policy, aws_s3_bucket
 
 ## Maybe Todo:
 * Enable S3 versioning
-* Enable S3 Logging
+* Enable S3 logging
 * Enable S3 replication
 * Enable MFA
-* Enable server side encryption
-* Upload initial file as cannary for uploader to find
+* Enable server-side encryption
+* Upload initial file as canary for uploader to recognize
 
-# limitations
-max Bucket size = 5TB
+# Limitations
+max. bucket size = 5TB
 
