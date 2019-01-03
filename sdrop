@@ -20,13 +20,13 @@ function version
 
 function help
 {
-    echo "./sdrop [new|list|remove|version|help]"
+    echo "./sdrop new|list|remove|version|help"
     echo 
-    echo " new                      # creates new bucket"
-    echo " list                     # lists all buckets"
-    echo " remove <bucket-id>       # removes bucket "
+    echo " new                      # create new bucket"
+    echo " list                     # list all buckets"
+    echo " remove <bucket-id>       # remove bucket "
     echo " version                  # print version info"
-    echo " help                     # prints this message"
+    echo " help                     # print this message"
 
     exit
 }
@@ -101,12 +101,12 @@ EOF
     echo "Dear Source, your Simple Drop is ready for your Data."
     echo
     echo "How-to:"
-    echo "       * Insall Cyberduck: https://cyberduck.io/download"
-    echo "       * Connection > s3 >"
+    echo "       * Install Cyberduck: https://cyberduck.io/download"
+    echo "       * Start Cyberduck > Open Connection > s3"
     echo "       * Enter: Username|Password|URL"
     echo "       * Upload Data"
     echo 
-    echo "Please consider making use of Client-side encryption:"
+    echo "Please consider making use of client-side encryption:"
     echo "        https://blog.cyberduck.io/2017/01/19/cryptomator/"
     echo 
     echo "Your Credentials:"
@@ -143,7 +143,7 @@ elif [ $1 = "remove" ]; then
     if [ $# -eq 2 ]; then
         remove $2
     else
-        echo "Bad Argmuents - Not sure what bucket to remove"
+        echo "Bad Arguments - Not sure what bucket to remove"
         help
     fi
 else

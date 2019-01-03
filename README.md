@@ -102,6 +102,8 @@ Removing aws_iam_access_key, aws_iam_user, aws_iam_user_policy, aws_s3_bucket
 ## Todo:
 * add `./sdrop log --tail` function
 * add `./drop new --region=region` feature
+* create fully configured drag&drop read cyberduck "config profile file" for source
+* make Terraform State remote
 
 ## Maybe Todo:
 * Enable S3 versioning
