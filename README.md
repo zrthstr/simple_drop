@@ -94,9 +94,8 @@ OWNER	 nnnnn.mmmmm	xxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 % ./sdrop remove 123456789
 Removing Bucket: s3-xxxxxx.tf
-# confirm: y
-Removing aws_iam_access_key, aws_iam_user, aws_iam_user_policy, aws_s3_bucket
 # confirm: yes
+Removing aws_iam_access_key, aws_iam_user, aws_iam_user_policy, aws_s3_bucket
 ```
 
 ## Todo:
