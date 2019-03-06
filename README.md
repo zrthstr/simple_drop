@@ -11,7 +11,7 @@ Simple, fully automatized solution for receiving large quantities of third-party
 1. `sdrop` adds and removes the following resources with the help of terraform
 
    * aws_iam_access_key
-   * ws_iam_user
+   * aws_iam_user
    * aws_iam_user_policy
    * aws_s3_bucket
 2. prints message intended for dropping third-party providing credentials and instructions
