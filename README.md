@@ -14,7 +14,7 @@ Simple, fully automatized solution for receiving large quantities of third-party
    * aws_iam_user
    * aws_iam_user_policy
    * aws_s3_bucket
-2. prints message intended for dropping third-party providing credentials and instructions
+2. prints email message intended for dropping third-party providing them with credentials and instructions
  
 
 # Setup & Installation
