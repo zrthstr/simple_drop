@@ -40,7 +40,8 @@ function list
 
 function new
 {
-    USER="$RANDOM$RANDOM"
+    # User name must start with letter
+    USER="SD$RANDOM$RANDOM"
     RAND="$RANDOM$RANDOM$RANDOM"
     NAME="$BUCKET_BASENAME-$RAND"
     BUCKET_URL="$NAME$AWS_PREFIX"

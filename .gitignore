@@ -1,2 +1,2 @@
-aws/*.backup
-aws/.terraform
+aws/*
+!aws/provider.tf
