@@ -7,25 +7,6 @@ simply receive 4,5 TB third-party data files using `aws:s3`
 * simple & fast
 
 
-### needs
-* Install `sdrop`
-```
-git clone git@github.com:zrthstr/simple_drop.git
-```
-* install `terraform` and `aws-cli` tools
-* add `sd` AWS account to `~/.aws/credentials`
-```
-[sd]
-aws_access_key_id = KEYKEYKEYKEY
-aws_secret_access_key = NSANSANSANSA
-```
-* Init terraform
-```
-cd aws
-terraform init
-```
-
-
 ## Usage
 ```
 % ./sdrop help 
@@ -57,6 +38,25 @@ Removing Bucket: s3-xxxxxx.tf
 # confirm: yes
 Removing aws_iam_access_key, aws_iam_user, aws_iam_user_policy, aws_s3_bucket
 ```
+
+### needs
+* Install `sdrop`
+```
+git clone git@github.com:zrthstr/simple_drop.git
+```
+* install `terraform` and `aws-cli` tools
+* add `sd` AWS account to `~/.aws/credentials`
+```
+[sd]
+aws_access_key_id = KEYKEYKEYKEY
+aws_secret_access_key = NSANSANSANSA
+```
+* Init terraform
+```
+cd aws
+terraform init
+```
+
 
 ## Todo:
 * add `./sdrop log --tail` functionality
