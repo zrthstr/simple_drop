@@ -38,7 +38,7 @@ Removing Bucket: s3-xxxxxx.tf
 Removing aws_iam_access_key, aws_iam_user, aws_iam_user_policy, aws_s3_bucket
 ```
 
-### needs
+### setup
 * Install `sdrop`
 ```
 git clone git@github.com:zrthstr/simple_drop.git
