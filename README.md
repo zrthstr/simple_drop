@@ -7,7 +7,7 @@ simply receive 4,5 TB third-party data files using `aws:s3`
 * simple & fast
 
 
-## Usage
+## Usage, Add, List, Remove
 ```
 sdrop  new|list|remove|version|help
   new                        # create new bucket
@@ -16,7 +16,7 @@ sdrop  new|list|remove|version|help
   version                    # print version info
   help                       # print this message
 ```
-## Add new, List, Remove Drop
+
 ```
 % ./sdrop new
 Creating new bucket: simple-drop-xxxxxxxxxxxxxxxx.s3.amazonaws.com
