@@ -16,13 +16,13 @@ sdrop  new|list|remove|version|help
   version                    # print version info
   help                       # print this message
 ```
-## Add New Drop
+## Add new, List, Remove Drop
 ```
 % ./sdrop new
 Creating new bucket: simple-drop-xxxxxxxxxxxxxxxx.s3.amazonaws.com
 # confirm yes or no
 ```
-## List all Drops
+
 ```
 % ./sdrop list 
 Listing buckets
@@ -30,7 +30,7 @@ BUCKET   yyyyy.yyyyy    yyyyyyyyyyyyyyyyyyyyyyyyy
 OWNER	 nnnnn.mmmmm	xxxxxxxxxxxxxxxxxxxxxxxxx
 ...
 ```
-## Remove Drop
+
 ```
 % ./sdrop remove 123456789
 Removing Bucket: s3-xxxxxx.tf
