@@ -30,12 +30,12 @@ terraform init
 ## Usage
 ```
 % ./sdrop help 
-./sdrop new|list|remove|version|help
- new                      # create new bucket
- list                     # list all buckets
- remove <bucket-id>       # remove bucket 
- version                  # print version info
- help                     # print this message
+sdrop new|list|remove|version|help
+  new                        # create new bucket
+  list                       # list all buckets
+  remove <bucket-id>         # remove bucket 
+  version                    # print version info
+  help                       # print this message
 ```
 ## Add New Drop
 ```
