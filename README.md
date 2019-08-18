@@ -9,16 +9,16 @@ simply receive 4,5 TB third-party data files using `aws:s3`
 
 
 ### needs
+* Install `sdrop`
+```
+git clone git@github.com:zrthstr/simple_drop.git
+```
 * install `terraform` and `aws-cli` tools
 * add `sd` AWS account to `~/.aws/credentials`
 ```
 [sd]
 aws_access_key_id = KEYKEYKEYKEY
 aws_secret_access_key = NSANSANSANSA
-```
-* Install `sdrop`
-```
-git clone git@github.com:zrthstr/simple_drop.git
 ```
 * Init terraform
 ```
@@ -31,7 +31,6 @@ terraform init
 ```
 % ./sdrop help 
 ./sdrop new|list|remove|version|help
-
  new                      # create new bucket
  list                     # list all buckets
  remove <bucket-id>       # remove bucket 
