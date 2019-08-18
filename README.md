@@ -1,20 +1,19 @@
 
 # Simple Drop
-Simple, fully automatized solution for receiving large quantities of third-party data with the possibility of client-side encryption. Making use of aws:s3.
-
-# Key Features
-* client-side encryption (e2e)
+simply receive max 4,5 TB third-party data via `aws:s3`
+* client-side encryption (e2e) possible
+* serverside encryption maybe possible to..
 * up to 5 TB per bucket
 * really simple & fast
 
-# How this Works
+## uage
 1. `sdrop` adds and removes the following resources with the help of terraform
 
    * aws_iam_access_key
    * aws_iam_user
    * aws_iam_user_policy
    * aws_s3_bucket
-2. prints email message intended for dropping third-party providing them with credentials and instructions
+2. prints email message intended for dropping third-party, inculding including credentials and instructions
  
 
 # Setup & Installation
@@ -24,21 +23,13 @@ Simple, fully automatized solution for receiving large quantities of third-party
 * terraform
 * bash
 
-## Install awscli
+## Install awscli, terraform 
 `% sudo pip install awscli`
-
-## Install terraform
-### Ubuntu / Debian 
-`# https://askubuntu.com/a/983352 `
-
-### arch
 `% sudo pacman -S terraform`
-
-### macOS
 `% brew install terraform`
 
 ## Configure awscli
-add the following to your `~/.aws/credentials`
+add the `sd` resource to your `~/.aws/credentials`
 ```
 [sd]
 aws_access_key_id = KEYKEYKEYKEY
@@ -53,7 +44,7 @@ terraform init
 ```
 
 # Usage
-## Version
+## Version & Help
 ```
 % ./sdrop version
 
@@ -63,10 +54,8 @@ terraform init
   '   D'
   ',  ,'        This program may be freely redistributed under
     `'          the terms of the GNU General Public License.
-```
 
-## Help
-```
+
 % ./sdrop help 
 ./sdrop new|list|remove|version|help
 
@@ -101,16 +90,11 @@ Removing aws_iam_access_key, aws_iam_user, aws_iam_user_policy, aws_s3_bucket
 ## Todo:
 * add `./sdrop log --tail` functionality
 * add `./drop new --region=region` feature
-* create fully configured drag&drop read cyberduck "config profile file" for source
-* make Terraform State remote
-
-## Maybe Todo:
-* Enable S3 versioning
-* Enable S3 logging
-* Enable S3 replication
-* Enable MFA
-* Enable server-side encryption
-* Upload initial file as canary for uploader to recognize
+* send cyberduck/filezilla config + credentials via email template
+* maybe make Terraform State remote
+* Enable S3 versioning, logging, replication, maybe Enable MFA
+* Enable server-side encryption as default
+* maybe Upload initial file as canary for uploader to recognize
 
 # Limitations
 max. bucket size = 5TB
