@@ -2,8 +2,7 @@
 # Simple Drop
 simply receive 4,5 TB third-party data files using `aws:s3`
 
-* client-side encryption (e2e) possible
-* 'server-side' encryption possible to...
+* client-side encryption (e2e) possible, 'server-side' encryption possible to...
 * 4,5 TB per bucket
 * simple & fast
 
