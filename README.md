@@ -9,8 +9,7 @@ simply receive 4,5 TB third-party data files using `aws:s3`
 
 ## Usage
 ```
-% ./sdrop help 
-sdrop new|list|remove|version|help
+sdrop  new|list|remove|version|help
   new                        # create new bucket
   list                       # list all buckets
   remove <bucket-id>         # remove bucket 
