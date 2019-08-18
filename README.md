@@ -6,7 +6,7 @@ simply receive max 4,5 TB third-party data via `aws:s3`
 * up to 5 TB per bucket
 * really simple & fast
 
-## uage
+## usage
 1. `sdrop` adds and removes the following resources with the help of terraform
 
    * aws_iam_access_key
